@@ -1,16 +1,18 @@
-import { Subject } from './Subject';
+import { Subjects } from "./Subject";
 
-export class Cpp extends Subject {
-  getRequirements(): string {
-    return 'Here is the list of requirements for Cpp';
-  }
+export namespace Subjects {
+    export class Cpp extends Subjects.Subject {
+        getRequirements(): string {
+            return 'Here is the list of requirements for Cpp';
+        }
 
-  getAvailableTeacher(): string {
-    if (this.teacher && this.teacher.experienceTeachingC) {
-      return `Available Teacher: ${this.teacher.firstName}`;
-    } else {
-      return 'No available teacher';
+        getAvailableTeacher(): string {
+            if (this.teacher && this.teacher.experienceTeachingC) {
+                return `Available Teacher: ${this.teacher.firstName}`;
+            } else {
+                return 'No available teacher';
+            }
+        }
     }
-  }
 }
 
