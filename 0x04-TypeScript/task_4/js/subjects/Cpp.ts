@@ -7,7 +7,7 @@ export namespace Subjects {
         }
 
         getAvailableTeacher(): string {
-            if (this.teacher && this.teacher.experienceTeachingC?) {
+            if (this.teacher && this.teacher.experienceTeachingC?Number(this.teacher.experienceTeachingC) : 0) {
                 return `Available Teacher: ${this.teacher.firstName}`;
             } else {
                 return 'No available teacher';
