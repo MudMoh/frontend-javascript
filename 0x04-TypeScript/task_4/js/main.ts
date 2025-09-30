@@ -1,6 +1,7 @@
 import { Cpp } from './subjects/Cpp';
 import { Java } from './subjects/Java';
 import { React } from './subjects/React';
+import { Teacher } from './subjects/Teacher';
 
 // Create and export constants for each subject
 export const cpp = new Cpp();
@@ -8,7 +9,7 @@ export const java = new Java();
 export const react = new React();
 
 // Create and export the teacher object
-export const cTeacher = {
+export const cTeacher: Teacher = {
   firstName: 'John',
   lastName: 'Doe',
   experienceTeachingC: 10,
