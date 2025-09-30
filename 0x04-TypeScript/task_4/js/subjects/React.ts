@@ -5,16 +5,27 @@ import { Teacher } from './Teacher';
 declare interface Teacher {
   experienceTeachingReact?: number;
 }
-export class React extends Subject {
-  getRequirements(): string {
-    return 'Here is the list of requirements for React';
-  }
+export namespace Subjects {
+  export class React extends Subject {
+    get requirements(): string {
+      return 'Here is the list of requirements for React';
+    }
 
-  getAvailableTeacher(): string {
-    if (this.teacher && (this.teacher as Teacher).experienceTeachingReact) {
-      return `Available Teacher: ${(this.teacher as Teacher).firstName}`;
-    } else {
-      return 'No available teacher';
+    get availableTeacher(): string {
+      if (this.teacher && this.teacher.experienceTeachingReact) {
+        return `Available Teacher: ${this.teacher.firstName}`;
+      } else {
+        return 'No available teacher';
+      }
+    }
+
+    // Add the properties here
+    get experienceTeachingReact(): number | undefined {
+      return this.teacher?.experienceTeachingReact;
+    }
+
+    get firstName(): string | undefined {
+      return this.teacher?.firstName;
     }
   }
 }
