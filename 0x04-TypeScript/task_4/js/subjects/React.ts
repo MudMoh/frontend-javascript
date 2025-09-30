@@ -7,7 +7,7 @@ export class React extends Subject {
   }
 
   getAvailableTeacher(): string {
-    if (this.teacher && (this.teacher as Teacher).experienceTeachingReact) {
+    if (this.teacher && (this.teacher as Teacher).experienceTeachingReact? number((this.teacher as Teacher).experienceTeachingReact) : 0  ) {
       return `Available Teacher: ${(this.teacher as Teacher).firstName}`;
     } else {
       return 'No available teacher';
